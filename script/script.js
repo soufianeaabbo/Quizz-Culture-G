@@ -1,5 +1,6 @@
 const btn = document.querySelector('.btn')
 const start = document.querySelector('.start')
+const titrep = document.querySelector('.titrep')
 const rep = document.querySelector('.reponse')
 const msg = document.querySelector(`.message`)
 const titre = document.querySelector(`.titre`)
@@ -9,6 +10,7 @@ const qqq = document.querySelector('.qqq')
 const q = document.querySelector('.question')
 
 const compteur = document.querySelector('.compteur')
+const affichagepoint = document.querySelector('.affichagepoint')
 const inputbtn = document.querySelector('.inputbtn')
 
 
@@ -22,14 +24,17 @@ const q6 = "Quel peintre a réalisé La Nuit étoilée ?"
 
 count = 1
 
+point = 0
+
+
 
 // start.addEventListener(`click`, function () {
 //     inputbtn.classList.toggle("hidden")
 //     titre.classList.toggle("hidden")
 //     qqq.classList.toggle("hidden")
 //     start.classList.toggle("hidden")
+//     titrep.classList.toggle("hidden")
 // })
-
 
 
 
@@ -38,6 +43,16 @@ count = 1
 function add() {
     count++
     compteur.innerText = `Question ${count} /10`
+    if (count === 10) {
+    btn.disabled= true
+     }
+    return 
+}
+
+function compteurpoints() {
+    
+    point++
+    affichagepoint.innerText = `points ${point}`
     return 
 }
 
@@ -72,16 +87,22 @@ function reponse() {
 
     if (count === 1 && rep.value == "leonard de vinci") {
         msg.innerText = "Bonne reponse a la Q1"
+        compteurpoints()
     } else if (count === 2 && rep.value == "1789") {
         msg.innerText = "Bonne reponse a la Q2"
+        compteurpoints()
     }  else if (count === 3 && rep.value == "Mercure") {
         msg.innerText = "Bonne reponse a la Q3"
+        compteurpoints()
     }   else if (count === 4 && rep.value == "La France") {
         msg.innerText = "Bonne reponse a la Q4"
+      compteurpoints()
     }  else if (count === 5 && rep.value == "Le traité de Versailles") {
         msg.innerText = "Bonne reponse a la Q5"
+        compteurpoints()
     }  else if (count === 6 && rep.value == "van Gogh") {
         msg.innerText = "Bonne reponse a la Q6"
+    compteurpoints()
     } else {
         msg.innerText = "Mauvaise reponse"
     }
@@ -106,7 +127,7 @@ btn.addEventListener(`click`, function () {
 
 
 
-
+affichagepoint.innerText = `points ${point}`
 
 
 
