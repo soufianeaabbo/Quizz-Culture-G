@@ -6,6 +6,7 @@ const msg = document.querySelector(`.message`)
 const titre = document.querySelector(`.titre`)
 const qqq = document.querySelector('.qqq')
 
+const nouvellepartie = document.querySelector(".btnnew")
 
 const q = document.querySelector('.question')
 
@@ -23,7 +24,6 @@ const q5 = "Quel traité a mis fin à la Première Guerre mondiale ?"
 const q6 = "Quel peintre a réalisé La Nuit étoilée ?"
 
 count = 1
-
 point = 0
 
 
@@ -36,15 +36,28 @@ point = 0
 //     titrep.classList.toggle("hidden")
 // })
 
+function barreprogression() {
+    const progression =document.querySelector(".progression")
+    width = 0
+    
+    width += 2
 
+    progression.style.width += width + "%"
+    
+}
 
 
 
 function add() {
+    const messagefin = document.querySelector(".messagefin")
     count++
     compteur.innerText = `Question ${count} /10`
     if (count === 10) {
-    btn.disabled= true
+    // btn.disabled= true
+    btn.classList.toggle("hidden")
+    nouvellepartie.classList.toggle("hidden")
+    messagefin.innerText = `Partie terminé`
+    msg.classList.add("hidden")
      }
     return 
 }
@@ -121,7 +134,16 @@ btn.addEventListener(`click`, function () {
     reponse()
     add()
     question()
+    barreprogression()
     clear(rep)
+})
+
+
+
+
+
+nouvellepartie.addEventListener(`click`, function () {
+   location.reload();
 })
 
 
