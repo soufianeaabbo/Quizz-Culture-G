@@ -1,0 +1,68 @@
+/* Permet de faire tenir les padding & border dans les largeurs des boites */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* fais tenir les images dans leur parent et enlève l'espacement en bottom */
+img{
+    display: block;
+    max-width: 100%;
+}
+
+/* enlève les bordures autour du body */
+body{
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+
+
+.inputbtn{
+    gap: 2rem;
+    margin:  0 auto;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+
+.qqq{
+    
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    margin:  0 auto;
+    width: 34%;
+    justify-content: flex-start;
+}
+
+
+.btn{
+    width: 10%;
+}
+.reponse{
+    width: 30%;
+}
+
+
+
+.hidden{
+    display: none;
+}
+
+
+.divstart{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    
+}
+
